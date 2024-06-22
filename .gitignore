@@ -1,0 +1,22 @@
+# Ignore object files
+*.o
+
+# Ignore compiled files
+*.out
+*.exe
+
+# Ignore build directories
+/build/
+/cmake-build-debug/
+
+# Ignore IDE related files
+.idea/
+*.iml
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*~
+*.swp
+*.swo
