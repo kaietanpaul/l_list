@@ -13,6 +13,7 @@ typedef struct s_movies
 }	t_movies;
 
 t_movies	*add_movie(t_movies *, char *, char *, int);
+t_movies	*add_movie_end(t_movies *, char *, char *, int);
 
 void		print_movie(t_movies *);
 void		print_all_movies(t_movies *);

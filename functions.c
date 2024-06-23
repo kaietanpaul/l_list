@@ -4,7 +4,7 @@ void		print_movie(t_movies *head)
 {
 	if (head)
 	{
-		printf("Title: %s\n", head->title);
+		printf("\nTitle: %s\n", head->title);
 		printf("Director: %s\n", head->director);
 		printf("Year: %i\n", head->year);
 	}
@@ -70,4 +70,28 @@ t_movies	*add_movie(t_movies *head, char *title, char *director, int year)
 	movie->next = head;
 
 	return (movie);
+}
+
+t_movies	*add_movie_end(t_movies *head, char *title, char *director, int year)
+{
+	if (!head)
+		return (add_movie(head, title, director, year));
+
+	t_movies *last_movie = malloc(sizeof(t_movies));
+	if (!last_movie)
+		return (NULL);
+
+	t_movies *tmp = head;
+
+	last_movie->title = kai_strdup(title);
+	last_movie->director = kai_strdup(director);
+	last_movie->year = year;
+	last_movie->next = NULL;
+
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+
+	tmp->next = last_movie;
+
+	return (head);
 }
